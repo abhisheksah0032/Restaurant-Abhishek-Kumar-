@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gallery | Golden Fork Restaurant</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Segoe UI", Arial, sans-serif;
+}
+
+body{
+  background: linear-gradient(to right, #a694f7, #f3a683);
+  min-height:100vh;
+}
+
+
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  background:#1e272e;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  z-index:1000;
+}
+
+.logo{
+  color:#fbc531;
+  font-size:22px;
+  font-weight:bold;
+  letter-spacing:1px;
+}
+
+.nav-links a{
+  color:white;
+  text-decoration:none;
+  margin-right:20px;
+  font-size:16px;
+  position:relative;
+}
+.nav-links a::after{
+  content:"";
+  width:0;
+  height:2px;
+  background:#fbc531;
+  position:absolute;
+  bottom:-5px;
+  left:0;
+  transition:0.3s;
+}
+.nav-links a:hover::after{
+  width:100%;
+}
+
+.nav-icons{
+  display:flex;
+  align-items:center;
+  gap:25px;
+}
+.nav-icons i{
+  color:white;
+  font-size:18px;
+  cursor:pointer;
+  transition:0.3s;
+}
+.nav-icons i:hover{
+  color:#fbc531;
+}
+
+.more-menu{
+  position:relative;
+}
+.dropdown{
+  display:none;
+  position:absolute;
+  right:0;
+  top:30px;
+  background:white;
+  min-width:160px;
+  border-radius:6px;
+  overflow:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+.dropdown a{
+  display:block;
+  padding:12px;
+  color:#333;
+  text-decoration:none;
+}
+.dropdown a:hover{
+  background:#fbc531;
+  color:black;
+}
+
+.gallery-hero{
+  margin-top:120px;
+  padding:60px 20px;
+  text-align:center;
+}
+.gallery-hero h1{
+  font-size:42px;
+  color:#2f3640;
+}
+.gallery-hero p{
+  margin-top:10px;
+  font-size:18px;
+}
+
+.gallery-wrapper{
+  max-width:1100px;
+  margin:40px auto;
+  background:rgba(255,255,255,0.95);
+  padding:40px;
+  border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+  gap:25px;
+}
+
+.gallery-grid img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:12px;
+  transition:0.4s;
+  cursor:pointer;
+}
+
+.gallery-grid img:hover{
+  transform:scale(1.08);
+  box-shadow:0 8px 25px rgba(0,0,0,0.35);
+}
+
+@media(max-width:750px){
+  .gallery-grid img{
+    height:180px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">🍴 Golden Fork</div>
+
+  <div class="nav-links">
+    <a href="golden fork home.html">Home</a>
+    <a href="golden fork about.html">About</a>
+    <a href="golden fork menu.html">Menu</a>
+    <a href="golden fork gellery.html">Gallery</a>
+    <a href="golden fork contact.html">Contact</a>
+  </div>
+
+  <div class="nav-icons">
+    <i class="fa-solid fa-shop" onclick="goMenu()"></i>
+
+    <div class="more-menu">
+      <i class="fa-solid fa-ellipsis-vertical" onclick="toggleMenu()"></i>
+      <div class="dropdown" id="dropdown">
+        <a href="golden fork home.html">Home</a>
+        <a href="golden fork menu.html">Menu</a>
+        <a href="golden fork gellery.html">Gallery</a>
+        <a href="golden fork about.html">About</a>
+        <a href="golden fork contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="gallery-hero">
+  <h1>Our Gallery</h1>
+  <p>Moments, food & memories from Golden Fork</p>
+</section>
+
+<div class="gallery-wrapper">
+  <div class="gallery-grid">
+    <img src="https://lh3.googleusercontent.com/p/AF1QipPUMc4F7gq2fQSWC1guxz_QtIkESeTwgRHzTgBw=s1360-w1360-h1020-rw">
+    <img src="https://lh3.googleusercontent.com/p/AF1QipOFgOc2kpzCMdFTqU-ARAFYOo8x5Qef60HA1oab=w141-h235-n-k-no-nu">
+    <img src="https://lh3.googleusercontent.com/p/AF1QipOpeKJQhDk38VgbmWST6C7wOFZDRxn-szANBbKA=w141-h101-n-k-no-nu">
+    <img src="https://lh3.googleusercontent.com/p/AF1QipPzJIcG3JNiu7LzUQZm7_BlNUZsb6r0OhQ9ERiG=w141-h101-n-k-no-nu">
+    <img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSx0bZj4OCzKU64Zbze5WxR6udw5neRGSrBd8bBfyI2NSDNhrGiJ4px2Hf2TbHjows_26efPI0zeKRR_eViLZsFi7rvIBapJoL6zxaRk4rE3I3O6-BU2Ci2PjJ03zzxugvWBdbcx=w141-h176-n-k-no-nu">
+    <img src="https://lh3.googleusercontent.com/p/AF1QipMb2g930qfvuZAkhj-XBz9_RiGr7GzNm9ouglC0=w141-h118-n-k-no-nu">
+    <img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSxHpSy99AxvLiKfRGMoXDzoU6wBi2h2crbCPUm0Rp5nYByYyTZxYpSjYiq40j5r1tmC2MB4zdBMElDi4dVMJnZpQ9ufMrs8cz47k08qGqKdh8guO-wsb9e06oeG_4vd9TsPyScZ=w141-h141-n-k-no-nu">
+    <img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwSODDAGe3r5eHztsTvuyuuUCM9vog85B5iH4ak0qVDT9ddz5hgmkKM9HdXk7tD6lRaU410qhiRli16jE8oK2VbircDnevru2Y_VvpQePSczoOb9I-xttAt2AMtAyLXC-UPEL5_Cx7C-7po=w141-h176-n-k-no-nu">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-ZIoGE7Yj0lmejEBULt96X2H_Y5zFYx7Paw&s">
+  </div>
+</div>
+
+<script>
+function toggleMenu(){
+  let menu = document.getElementById("dropdown");
+  menu.style.display = (menu.style.display === "block") ? "none" : "block";
+}
+function goMenu(){
+  window.location.href = "gold";
+}
+document.addEventListener("click", function(e){
+  if(!e.target.closest(".more-menu")){
+    document.getElementById("dropdown").style.display = "none";
+  }
+});
+</script>
+
+</body>
+</html>

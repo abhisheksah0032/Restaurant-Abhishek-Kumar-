@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Home | Golden Fork Restaurant</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, Helvetica, sans-serif
+}
+
+body{
+  background: linear-gradient(to right, #a694f7, #f3a683);
+  min-height:100vh;
+}
+
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  background:#1e272e;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  z-index:1000;
+}
+
+.logo{
+  color:#fbc531;
+  font-size:22px;
+  font-weight:bold;
+  letter-spacing:1px;
+}
+
+.nav-links a{
+  color:white;
+  text-decoration:none;
+  margin-right:20px;
+  font-size:16px;
+  position:relative;
+}
+
+.nav-links a::after{
+  content:"";
+  width:0;
+  height:2px;
+  background:#fbc531;
+  position:absolute;
+  bottom:-5px;
+  left:0;
+  transition:0.3s;
+}
+.nav-links a:hover::after{
+  width:100%;
+}
+
+.nav-icons{
+  display:flex;
+  align-items:center;
+  gap:25px;
+}
+
+.nav-icons i{
+  color:white;
+  font-size:18px;
+  cursor:pointer;
+  transition:0.3s;
+}
+.nav-icons i:hover{
+  color:#fbc531;
+}
+
+.more-menu{
+  position:relative;
+}
+.dropdown{
+  display:none;
+  position:absolute;
+  right:0;
+  top:30px;
+  background:white;
+  min-width:160px;
+  border-radius:6px;
+  overflow:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+.dropdown a{
+  display:block;
+  padding:12px;
+  color:#333;
+  text-decoration:none;
+  transition:0.3s;
+}
+.dropdown a:hover{
+  background:#fbc531;
+  color:black;
+}
+
+.hero{
+  padding-top:140px;
+  padding-bottom:80px;
+  text-align:center;
+}
+.hero h1{
+  font-size:44px;
+  color:#2f3640;
+}
+.hero p{
+  margin-top:10px;
+  font-size:18px;
+}
+
+.food-section{
+  max-width:1100px;
+  margin:auto;
+  background:rgba(255,255,255,0.9);
+  padding:50px;
+  border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+.food-section h2{
+  font-size:32px;
+  margin-bottom:30px;
+  color:#2f3640;
+  text-align:center;
+}
+
+.food-row{
+  display:flex;
+  gap:25px;
+  margin-bottom:35px;
+  align-items:center;
+}
+
+.food-row img{
+  width:220px;
+  height:150px;
+  object-fit:cover;
+  border-radius:12px;
+}
+
+.food-text h3{
+  font-size:22px;
+}
+
+.food-text p{
+  color:#555;
+  margin:6px 0;
+}
+
+.price{
+  font-weight:bold;
+  font-size:18px;
+}
+
+.order-btn{
+  display:inline-block;
+  margin-top:10px;
+  padding:8px 22px;
+  background:#e84118;
+  color:white;
+  border-radius:25px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:0.3s;
+}
+.order-btn:hover{
+  background:#c23616;
+}
+
+footer{
+  margin-top:50px;
+  background:#1e272e;
+  color:white;
+  text-align:center;
+  padding:20px;
+  font-size:14px;
+}
+
+@media(max-width:750px){
+  .food-row{
+    flex-direction:column;
+    text-align:center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">🍴 Golden Fork</div>
+
+  <div class="nav-links">
+    <a href="golden fork home.html">Home</a>
+    <a href="golden fork about.html">About</a>
+    <a href="golden fork menu.html">Menu</a>
+    <a href="golden fork gellery.html">Gallery</a>
+    <a href="golden fork contact.html">Contact</a>
+  </div>
+
+  <div class="nav-icons">
+    <i class="fa-solid fa-shop" onclick="goMenu()"></i>
+
+    <div class="more-menu">
+      <i class="fa-solid fa-ellipsis-vertical" onclick="toggleMenu()"></i>
+      <div class="dropdown" id="dropdown">
+        <a href="golden fork home.html">Home</a>
+        <a href="golden fork menu.html">Menu</a>
+        <a href="golden fork gellery.html">Gallery</a>
+        <a href="golden fork about.html">About</a>
+        <a href="golden fork contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Welcome to Golden Fork Restaurant</h1>
+  <p>Delicious food • Unique flavors • Cozy atmosphere</p>
+</section>
+
+<section class="food-section">
+  <h2>Our Famous Food</h2>
+
+  <div class="food-row">
+    <img src="https://ik.imagekit.io/munchery/blog/tr:w-768/from-punjab-to-tamil-nadu-a-tour-of-ten-indian-thalis.jpeg">
+    <div class="food-text">
+      <h3>Special Indian Thali</h3>
+      <p>Complete meal with authentic Indian flavors.</p>
+      <span class="price">₹250</span><br>
+      <a href="#" class="order-btn">Order Now</a>
+    </div>
+  </div>
+
+  <div class="food-row">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlyWZ19NwpSSN4pK9b08T7UvpX-9kR4XjuJg&s">
+    <div class="food-text">
+      <h3>Punjabi Thali</h3>
+      <p>Rich taste with Punjabi style cooking.</p>
+      <span class="price">₹200</span><br>
+      <a href="#" class="order-btn">Order Now</a>
+    </div>
+  </div>
+
+  <div class="food-row">
+    <img src="https://www.cookingcarnival.com/wp-content/uploads/2025/09/Vegetable-Dum-Biryani-5.jpg">
+    <div class="food-text">
+      <h3>Veg Biryani</h3>
+      <p>Aromatic rice cooked with fresh vegetables.</p>
+      <span class="price">₹180</span><br>
+      <a href="#" class="order-btn">Order Now</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Golden Fork Restaurant | Designed with ❤️
+</footer>
+
+<script>
+function toggleMenu(){
+  let menu = document.getElementById("dropdown");
+  menu.style.display = (menu.style.display === "block") ? "none" : "block";
+}
+
+function goMenu(){
+  window.location.href = "golden fork menu.html";
+}
+
+document.addEventListener("click", function(e){
+  if(!e.target.closest(".more-menu")){
+    document.getElementById("dropdown").style.display = "none";
+  }
+});
+</script>
+
+</body>
+</html>
